@@ -1,4 +1,5 @@
 import { useState } from "react";
+import CountryCard from "../components/CountryCard";
 
 export default function Landing() {
   const [query, setQuery] = useState("");
@@ -49,18 +50,9 @@ export default function Landing() {
       {loading && <p>Loading...</p>}
       {error && <p>{error}</p>}
 
-      <section>
+      <section style={{ display: "flex", gap: "20px", flexWrap: "wrap" }}>
         {countries.map((country) => (
-          <div key={country.cca3}>
-            <h3>{country.name.common}</h3>
-            <p>Region: {country.region}</p>
-            <p>Capital: {country.capital?.[0]}</p>
-            <img
-              src={country.flags.svg}
-              alt={country.name.common}
-              width="150"
-            />
-          </div>
+          <CountryCard key={country.cca3} country={country} />
         ))}
       </section>
     </main>
