@@ -6,16 +6,16 @@ export const contexts = [
     soundQuery: "city street ambience"
   },
   {
-    id: "transport",
-    label: "Public Transport",
-    imageQuery: "train station crowd",
-    soundQuery: "train station ambience"
-  },
-  {
     id: "nature",
     label: "Nature",
     imageQuery: "natural landscape",
     soundQuery: "nature ambience wind birds"
+  },
+  {
+    id: "transport",
+    label: "Public Transport",
+    imageQuery: "train station crowd",
+    soundQuery: "train station ambience"
   },
   {
     id: "rain",
@@ -26,13 +26,7 @@ export const contexts = [
   {
     id: "market",
     label: "Local Market",
-    imageQuery: "local market people",
+    imageQuery: "local market crowd",
     soundQuery: "market crowd ambience"
-  },
-  {
-    id: "cafe",
-    label: "Café",
-    imageQuery: "outdoor cafe",
-    soundQuery: "cafe ambience murmur"
   }
 ];
