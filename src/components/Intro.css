@@ -1,0 +1,32 @@
+.intro {
+  position: fixed;
+  inset: 0;
+  background: radial-gradient(circle at center, #08121f, #000);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  transition: opacity 1s ease;
+}
+
+.intro.fade-out {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.intro-text {
+  color: white;
+  font-size: 2rem;
+  text-align: center;
+  letter-spacing: 1px;
+  animation: glow 2s ease-in-out infinite alternate;
+}
+
+@keyframes glow {
+  from {
+    text-shadow: 0 0 10px rgba(30,144,255,0.5);
+  }
+  to {
+    text-shadow: 0 0 20px rgba(30,144,255,1);
+  }
+}

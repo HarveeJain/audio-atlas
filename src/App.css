@@ -1,42 +1,123 @@
-#root {
-  max-width: 1280px;
+.tabs {
+  display: flex;
+  justify-content: center;
+  margin: 30px auto;
+}
+
+.tabs-inner {
+  display: flex;
+  background: rgba(255,255,255,0.08);
+  backdrop-filter: blur(12px);
+  border-radius: 40px;
+  padding: 6px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+}
+
+.tabs-inner button {
+  padding: 10px 28px;
+  border-radius: 30px;
+  border: none;
+  cursor: pointer;
+  background: transparent;
+  color: rgba(255,255,255,0.7);
+  font-weight: 600;
+  transition: all 0.3s ease;
+  font-size: 14px;
+}
+
+.tabs-inner button.active {
+  background: white;
+  color: #203a43;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+.tabs-inner button:hover {
+  color: rgb(93, 135, 170);
+}
+
+
+.refresh-btn {
+  margin-bottom: 20px;
+  border-radius: 40px;
+}
+.globe-container {
+  height: 520px;
+  max-width: 1100px;
+  margin: 40px auto;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 25px 60px rgba(0,0,0,0.5);
+  background: radial-gradient(circle at center, #102030, #081018);
+  display: flex;
+  justify-content: center;
+  align-items: center;
   margin: 0 auto;
-  padding: 2rem;
+  position: relative;
+}
+
+canvas {
+  max-width: 100% !important;
+  display: block;
+}
+html, body, #root {
+  height: 100%;
+  margin: 0;
+}
+
+.app {
+  min-height: 100vh;
+  width: 100%;
+  padding: 20px 40px;
+  font-family: 'Segoe UI', sans-serif;
+  background: radial-gradient(circle at top, #1a2a3a, #0d141c 70%);
+  color: white;
   text-align: center;
 }
-
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
-}
-
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
-}
-
 .card {
-  padding: 2em;
+  max-width: 1000px;
+  margin: 40px auto;
+  padding: 30px;
+  background: rgba(255,255,255,0.06);
+  backdrop-filter: blur(15px);
+  border-radius: 25px;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+  animation: fadeIn 0.5s ease forwards;
 }
 
-.read-the-docs {
-  color: #888;
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
 }
+
+.image-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 12px;
+  margin: 25px 0;
+}
+
+.image-grid img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 12px;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.image-grid img:hover {
+  transform: scale(1.07);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+}
+.logo{
+  width: 150px;      
+  max-width: 85%;   
+  height: auto;
+
+  display: block;
+  margin: 30px auto 20px auto;
+
+  border-radius: 24px;
+
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.35);
+}
+
