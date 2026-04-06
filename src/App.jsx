@@ -4,7 +4,7 @@ import AtlasCard from "./components/AtlasCard";
 import Loader from "./components/Loader";
 import Tabs from "./components/Tabs";
 import Intro from "./components/Intro";
-
+import logo from './assets/logo.png';
 import { fetchImages } from "./services/unsplashService";
 import { fetchUrbanContext } from "./services/wikiService";
 import { fetchRadio } from "./services/radioService";
@@ -15,7 +15,7 @@ const GEO_URL =
   "https://raw.githubusercontent.com/holtzy/D3-graph-gallery/master/DATA/world.geojson";
 
 function App() {
-  // ✅ MOVE THIS INSIDE THE COMPONENT
+  
   const [showIntro, setShowIntro] = useState(true);
 
   const [activeTab, setActiveTab] = useState("home");
@@ -88,7 +88,7 @@ function App() {
 
       {/* Main App */}
       <div className="app">
-        <img src="src/assets/logo.png" className="logo" alt="Audio Atlas Logo" />
+        <img src={logo} className="logo" alt="Audio Atlas Logo" />
 
         <Tabs activeTab={activeTab} setActiveTab={setActiveTab} />
 
