@@ -14,25 +14,28 @@ export default function Intro({ onFinish }) {
 
   useEffect(() => {
     if (index >= messages.length) {
-      setTimeout(() => {
+      const exitTimer = setTimeout(() => {
         setVisible(false);
-        setTimeout(onFinish, 1000);
+        const finishTimer = setTimeout(onFinish, 1000);
+        return () => clearTimeout(finishTimer);
       }, 1500);
-      return;
+
+      return () => clearTimeout(exitTimer);
     }
 
     let charIndex = 0;
     const currentMessage = messages[index];
 
     const typing = setInterval(() => {
-      setText(currentMessage.slice(0, charIndex + 1));
       charIndex++;
+      setText(currentMessage.slice(0, charIndex));
 
       if (charIndex === currentMessage.length) {
         clearInterval(typing);
+
         setTimeout(() => {
           setText("");
-          setIndex(prev => prev + 1);
+          setIndex((prev) => prev + 1);
         }, 1200);
       }
     }, 50);
